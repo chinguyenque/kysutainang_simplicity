@@ -1,0 +1,37 @@
+// level 2.1 - on/off  buzzer
+void app_init(void)
+{
+  GPIO_PinModeSet(gpioPortD, 3, gpioModePushPull, 0);
+}
+
+void app_process_action(void)
+{
+}
+void sl_button_on_change(const sl_button_t*handle){
+if (sl_button_get_state(handle) == SL_SIMPLE_BUTTON_PRESSED){
+  if (&sl_button_btn0 == handle){
+      sl_led_toggle(&sl_led_led0);
+
+  }
+}}
+
+
+
+// level 2.2 - on/off 3 leds
+void sl_button_on_change(const sl_button_t*handle){
+if (sl_button_get_state(handle) == SL_SIMPLE_BUTTON_PRESSED){
+  static int timepressed = 1;
+  if (&sl_button_btn0 == handle) {
+      if (timepressed == 4) timepressed = 1;
+        if (timepressed == 1) {
+            sl_led_toggle(&sl_led_led0);
+        }
+        if (timepressed == 2) {
+              sl_led_toggle(&sl_led_led1);
+          }
+        if (timepressed == 3) {
+              sl_led_toggle(&sl_led_led2);
+          }
+        timepressed++;
+  }
+}}
