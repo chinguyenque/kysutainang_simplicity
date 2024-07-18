@@ -1,7 +1,6 @@
 // level 2.1 - on/off  buzzer
 void app_init(void)
 {
-  GPIO_PinModeSet(gpioPortD, 3, gpioModePushPull, 0);
 }
 
 void app_process_action(void)
