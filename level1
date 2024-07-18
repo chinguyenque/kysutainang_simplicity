@@ -1,0 +1,16 @@
+//level 1 - blinking đèn
+void app_init(void)
+{
+  GPIO_PinModeSet(gpioPortD, 3, gpioModePushPull, 0);
+
+}
+void blink()
+{
+  sl_led_toggle(&sl_led_led0);
+  sl_udelay_wait (1000000);
+}
+
+void app_process_action(void)
+{
+  blink();
+}
