@@ -1,7 +1,6 @@
 //level 1 - blinking đèn
 void app_init(void)
 {
-  GPIO_PinModeSet(gpioPortD, 3, gpioModePushPull, 0);
 
 }
 void blink()
