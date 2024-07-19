@@ -17,6 +17,14 @@ if (sl_button_get_state(handle) == SL_SIMPLE_BUTTON_PRESSED){
 
 
 // level 2.2 - on/off 3 leds
+void app_init(void)
+{
+}
+
+void app_process_action(void)
+{
+}
+
 void sl_button_on_change(const sl_button_t*handle){
 if (sl_button_get_state(handle) == SL_SIMPLE_BUTTON_PRESSED){
   static int timepressed = 1;
